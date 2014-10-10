@@ -1,0 +1,192 @@
+<% page = {
+  title: i18n('admin_page_title'),
+  key: "admin-tool"
+} %>
+<% assets = {
+  'css': [
+    'admin.styl',
+    'ng-tags-input.bootstrap.css'
+  ],
+  'js': [
+    'modules/vendorCommon.js',
+    'ng-tags-input.js',
+    'angular/ErrorMsg.js',
+    'angular/admin.js'
+  ]
+} %>
+
+<div id="admin-home" ng-app="AdminApp">
+  <div data-ng-controller="adminController" ng-init="init()">
+    <form class="form-horizontal">
+      <fieldset>
+
+        <legend>Add New Product</legend>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="prodName">Name</label>
+          <div class="controls">
+            <input id="prodName" name="prodName" type="text" placeholder="Name" class="input-xxlarge" required="">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="prodAuthor">Author</label>
+          <div class="controls">
+            <input id="prodAuthor" name="prodAuthor" type="text" placeholder="autor" class="input-xxlarge">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="prodWebsite">WebSite</label>
+          <div class="controls">
+            <input id="prodWebsite" name="prodWebsite" type="text" placeholder="web site" class="input-xxlarge">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="company">Company</label>
+          <div class="controls">
+            <input id="company" name="company" type="text" placeholder="Company Name" class="input-xxlarge">
+
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="control-group">
+          <label class="control-label" for="prodSummary">Product Summary</label>
+          <div class="controls">
+            <textarea id="prodSummary" name="prodSummary" class="input-xxlarge"></textarea>
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="control-group">
+          <label class="control-label" for="prodDesc">Product Description</label>
+          <div class="controls">
+            <textarea id="prodDesc" name="prodDesc" class="input-xxlarge"></textarea>
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="control-group">
+          <label class="control-label" for="prodSpecs">Product Specifications</label>
+          <div class="controls">
+            <textarea id="prodSpecs" name="prodSpecs" class="input-xxlarge"></textarea>
+          </div>
+        </div>
+
+        <!-- Multiple Checkboxes (inline) -->
+        <div class="control-group">
+          <label class="control-label" for="chkPlatforms">PlatForms</label>
+          <div class="controls">
+            <label class="checkbox" for="chkPlatforms-0">
+              <input type="checkbox" name="chkPlatforms" id="chkPlatforms-0" value="Web">
+              Web
+            </label>
+            <label class="checkbox" for="chkPlatforms-1">
+              <input type="checkbox" name="chkPlatforms" id="chkPlatforms-1" value="iOS">
+              iOS
+            </label>
+            <label class="checkbox" for="chkPlatforms-2">
+              <input type="checkbox" name="chkPlatforms" id="chkPlatforms-2" value="Android">
+              Android
+            </label>
+            <label class="checkbox" for="chkPlatforms-3">
+              <input type="checkbox" name="chkPlatforms" id="chkPlatforms-3" value="Windows">
+              Windows
+            </label>
+            <label class="checkbox" for="chkPlatforms-4">
+              <input type="checkbox" name="chkPlatforms" id="chkPlatforms-4" value="Mac">
+              Mac
+            </label>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+          <label class="control-label" for="prodCategory">categories</label>
+          <div class="controls">
+            <label class="checkbox" for="chkCategories-0">
+              <input type="checkbox" name="chkCategories" id="chkCategories-0" value="familyTreeGenealogy">
+              Family Tree and Genealogy Programs
+            </label>
+            <label class="checkbox" for="chkCategories-1">
+              <input type="checkbox" name="chkCategories" id="chkCategories-1" value="personFH">
+              Person and Family History (Stories)
+            </label>
+            <label class="checkbox" for="chkCategories-2">
+              <input type="checkbox" name="chkCategories" id="chkCategories-2" value="numCrunchers">
+              Productivity - Number Crunchers
+            </label>
+            <label class="checkbox" for="chkCategories-3">
+              <input type="checkbox" name="chkCategories" id="chkCategories-3" value="presentors">
+              Productivity - Presentors
+            </label>
+            <label class="checkbox" for="chkCategories-4">
+              <input type="checkbox" name="chkCategories" id="chkCategories-4" value="Social">
+              Social
+            </label>
+            <label class="checkbox" for="chkCategories-5">
+              <input type="checkbox" name="chkCategories" id="chkCategories-5" value="research">
+              Research
+            </label>
+
+          </div>
+        </div>
+
+        <!-- Multiple Checkboxes (inline) -->
+        <div class="control-group">
+          <label class="control-label" for="checkboxes">Family Search Compatible</label>
+          <div class="controls">
+            <label class="checkbox inline" for="checkboxes-0">
+              <input type="checkbox" name="checkboxes" id="checkboxes-0" value="Yes">
+              Yes
+            </label>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="prodTags">Tags</label>
+          <div class="controls">
+            <tags-input ng-model="tags" class="input-xxlarge"></tags-input>
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label" for="prodLanguages">Languages</label>
+          <div class="controls">
+            <tags-input ng-model="languages" class="input-xxlarge"></tags-input>
+          </div>
+        </div>
+
+        <!-- Textarea -->
+        <div class="control-group">
+          <label class="control-label" for="prodRequirements">Requirements</label>
+          <div class="controls">
+            <textarea id="prodRequirements" name="prodRequirements" class="input-xxlarge">Product Requirements</textarea>
+          </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="control-group">
+          <label class="control-label" for="cancelBtn"></label>
+          <div class="controls">
+            <button id="cancelBtn" name="cancelBtn" class="btn btn-danger">Cancel</button>
+            <button id="saveBtn" name="saveBtn" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+</div>
+

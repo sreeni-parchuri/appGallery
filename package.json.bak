@@ -1,0 +1,26 @@
+{
+  "name": "appgallery",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./app.js",
+  "dependencies": {
+    "async": ">= 0.1.12",
+    "theme-engage": "git+https://github.com/fs-webdev/theme-engage.git",
+    "frontier-build-tools": "git+https://github.com/fs-webdev/frontier-build-tools.git",
+    "woodruff": "git+https://github.com/fs-webdev/woodruff.git",
+    "startup": "~0.1.12"
+  },
+  "devDependencies": {
+    "should": "~1.2.2",
+    "supertest": "~0.5.1",
+    "mocha": "~1.8.2"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "scripts": {
+    "test": "./bin/tests",
+    "postinstall": "node_modules/frontier-build-tools/node_modules/coffee-script/bin/cake assets:deploy"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "files": [
+    "AdminManager.js",
+    "AdminController.js",
+    "AdminServices.js"
+  ],
+  "simpleWrap": true
+}

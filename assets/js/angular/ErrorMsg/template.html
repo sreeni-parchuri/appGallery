@@ -1,0 +1,19 @@
+<div class="idx-error-alert alert alert-danger" ng-show="errorMsg">
+  <button type="button" class="close" ng-click="dismissError()" ng-show="isRecoverable">&times;</button>
+  <h2>{{error.title}}</h2>
+  <p>{{error.description}}</p>
+  <button ng-click="tryAgain()" class="btn btn-danger" ng-show="error.tryagainFunc != null">{tryagain-name}</button>
+</div>
+
+<div class="idx-error-modal modal hide">
+  <div class="modal-header alert-danger row-fluid">
+    <button type="button pull-right" class="close" ng-click="dismissError()" ng-show="isRecoverable"></button>
+    <h3 class="serif">{{error.title}}</h3>
+  </div>
+  <div class="modal-body">
+    <p>{{error.description}}</p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" ng-click="dismissError()" ng-show="isRecoverable">{ok}</button>
+  </div>
+</div>

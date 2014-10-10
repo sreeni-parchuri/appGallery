@@ -1,0 +1,78 @@
+<% page = { 'title' : 'Products', 'key': 'PRODUCTS_PAGE_NAME'} %>
+<% assets = { 
+  'css' : [
+  	'products.styl'
+  ], 
+  'js' : [
+     '2.3.2/bootstrap.js',
+     'angular-1.2.9/angular.js',
+     'angular/products.js'
+  ] 
+ } %>
+<div id="main" class="experiments">
+  <div class="image-section">
+   <div class="main-img"> </div>
+  </div>
+  <div class="filter-products row">
+   <div class="btn-group span3">
+	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="<%= viewCategory[0].categoryName %>"><%= viewCategory[0].categoryName %> <span class="caret"></span></a>
+	<ul class="dropdown-menu">
+	 <% for(var i=0; i<viewCategory.length; i++) {%>
+	 <li><a href="#"><%= viewCategory[i].categoryName %></a></li>
+	 <% } %>
+	</ul>
+   </div>
+   <div class="btn-group span3">
+	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="<%= viewPlatform[0].platformName %>"><%= viewPlatform[0].platformName %> <span class="caret"></span></a>
+	<ul class="dropdown-menu">
+	 <% for(var i=0; i<viewPlatform.length; i++) {%>
+	 <li><a href="#"><%= viewPlatform[i].platformName %></a></li>
+	 <% } %>
+	</ul>
+   </div>
+   <form class="navbar-form form-search">
+	<div class="input-append">
+	 <i class="icon-search"></i>
+	 <input data-items="4" type="text" class="span5" placeholder="search by keyword" />
+	</div>
+   </form>
+  </div>
+
+  <div class="total-products-info clearfix">
+   <p class="pull-left">Showing <%= products.length %> Products</p>
+   <div class="sort-products pull-right">
+    <label>Sort By </label>
+    <div class="btn-group">
+	 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#" title="Alphabetical">Alphabetical <span class="caret"></span></a>
+	 <ul class="dropdown-menu">
+	  <li><a href="#">Alphabetical</a></li>
+	  <li><a href="#">Free</a></li>
+	  <li><a href="#">Recent</a></li>
+	 </ul>
+    </div>
+   </div>
+  </div>
+  <!-- Products List -->
+  <div class="products-list row-fluid">
+  <ul class="thumbnails">
+   <% for(var i=0; i<products.length; i++) {%>
+   <li class="span3">
+    <div class="thumbnail">
+     <img src="<%= products[i].imagePath %>" alt="<%= products[i].Name %>" title="<%= products[i].Name %>" />
+     <div class="product-content caption">
+      <h3><%= products[i].Name %></h3>
+      <span><%= products[i].Category %></span>
+      <p class="product-description"><%= products[i].Desc %></p>
+      <p class="product-btns">
+       <% for(var j=0; j<products[i].categoryBtn.length; j++) {%>
+        <label class="btn-mini btn-inverse"><%= products[i].categoryBtn[j] %></label>
+       <% } %>
+      </p>
+     </div>
+    </div>
+   </li>
+   <% } %>
+  </ul>
+  </div>
+
+</div>

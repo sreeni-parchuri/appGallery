@@ -1,0 +1,106 @@
+/* Assigning commonly used variables  */
+font-size = 12px;
+font-family = "Lucida Grande", Arial;
+
+.image-section{
+	height:350px;
+}
+.main-img{
+	background:url("../img/main-img.jpg") center top no-repeat;
+	width:100%;
+	height:333px;
+	position:absolute;
+	left:0;
+}
+.filter-products {
+  background:#f5f5f5;
+  border:1px solid #cfcfcf;
+  border-radius:4px;
+  box-shadow:0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin:0;
+  position:relative;
+  top:-35px;
+  & .btn-group{
+   border-right:1px solid #cfcfcf;
+   margin:0;
+   text-align:center;
+   & .dropdown-menu{
+	width:100%;
+   }
+  }
+  & .btn{
+   background:#f5f5f5;
+   box-shadow:none;
+   border:none;
+   border-radius:0;
+   padding:15px 0;
+   width:100%;
+  }
+}
+
+.form-search {
+  padding:3px 16px 0 0;
+  text-align:center;
+  & .icon-search {
+   position:relative;
+   left:23px;
+   top:-8px;
+   z-index:999;
+  }
+  & .input-append input {
+   padding:6px 0 6px 25px;
+  }
+}
+.total-products-info{
+	padding:0 0 10px 0;
+}
+
+.sort-products {
+  & label{
+	display:inline-block;
+  }
+  & .btn{
+    background:#fff;
+  }
+  & .btn-group{
+	display:inline-block;
+  }
+}
+.products-list [class*="span"]:nth-child(4n+1){
+	margin-left:0px;
+}
+.products-list {
+  & .thumbnail{
+	position:relative;
+	padding:4px 0;
+	& img{
+	  padding:50px 0;
+	}
+  }
+  & .product-content{
+    height:180px;
+	border-top:1px solid #ddd;
+  }
+  & h3{
+    font:bold 15px font-family;
+	margin-bottom:0;
+  }
+  & p{
+    font:font-size font-family;
+  }
+}
+
+.product-content span{
+  font:font-size font-family;
+  margin-bottom:5px;
+  display:inline-block;
+  color:#999;
+}
+.product-btns{
+	position:absolute;
+	bottom:0;
+	& label{
+	  text-transform:uppercase;
+	  display:inline-block;
+	}
+}
