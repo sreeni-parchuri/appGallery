@@ -1,10 +1,7 @@
+var productManager = require('../view_controllers/productManager');
+
+
 module.exports = function(app) {
-  
-  /* Optionally include this to use this alternative template when wanting to create your own header and footer
-  app.set("view options", {
-    layout: "layout/layout-skills"
-  });
-  */
   
   app.get('/:page', function(req, res){
     res.render(req.params.page, {'products' : [
@@ -32,5 +29,24 @@ module.exports = function(app) {
   });
   app.get('/', function(req, res){
     res.render("index", {});
+  });
+  app.post("/products", function (req,res) {
+    productManager.create(req.body);
+    console.log(req.body);
+    res.status(201);
+    res.set("Location","http://localhost:5000/products/list/" + req.body.prodKey);
+    res.send("");
+  });
+
+  app.get("/products/:prodKey", function (req,res) {
+    var product = productManager.read(req.params.prodKey);
+    console.log(product);
+    if(product) {
+      res.status(200);
+      res.send(product);
+    } else {
+      res.status(404);
+    }
+
   });
 }

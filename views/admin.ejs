@@ -11,7 +11,8 @@
     'modules/vendorCommon.js',
     'ng-tags-input.js',
     'angular/ErrorMsg.js',
-    'angular/admin.js'
+    'angular/admin.js',
+    'angular/galServices.js'
   ]
 } %>
 
@@ -181,7 +182,7 @@
           <label class="control-label" for="cancelBtn"></label>
           <div class="controls">
             <button id="cancelBtn" name="cancelBtn" class="btn btn-danger">Cancel</button>
-            <button id="saveBtn" name="saveBtn" class="btn btn-primary">Save</button>
+            <button id="saveBtn" name="saveBtn" class="btn btn-primary" ng-click="getProducts()">Save</button>
           </div>
         </div>
 

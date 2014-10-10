@@ -10,5 +10,9 @@ adminApp.controller('adminController',['$scope', '$sce', 'AdminAppManager' , '$w
 
   $scope.init = function() {
 
+  };
+
+  $scope.getProducts = function() {
+    $scope.manager.getProducts();
   }
 }]);
